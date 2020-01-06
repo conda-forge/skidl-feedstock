@@ -1,5 +1,5 @@
 {% set name = "skidl" %}
-{% set version = "0.0.26" %}
+{% set version = "0.0.28" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e0853614f8271ae429e715cfb7a1e505af40d1e8caee1b5cf08c6d269e69e631
+  sha256: ad26860fafd6f2a4d2545ed397448d2f70624db3e63d1932dbce9bfe370f5520
 
 build:
   noarch: python
