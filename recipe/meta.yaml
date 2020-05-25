@@ -1,5 +1,5 @@
 {% set name = "skidl" %}
-{% set version = "0.0.29" %}
+{% set version = "0.0.30" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0e324ccd90fb0c5eb42110678f35f77764b87e4390b574e42cab893bfdc3fa21
+  sha256: d4f3a544368ee1a6061f86b610fe54941268e0ebd0ac890c4e095675fb9ee7b4
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - netlist_to_skidl = skidl.netlist_to_skidl_main:main
 
@@ -37,7 +37,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'SKiDL is a module that allows you to compactly describe the interconnection of electronic circuits and components using Python.'
+  summary: SKiDL is a module that allows you to compactly describe the interconnection of electronic circuits and components using Python.
 
 extra:
   recipe-maintainers:
