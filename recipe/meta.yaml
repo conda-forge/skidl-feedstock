@@ -18,15 +18,13 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - kinparse >=0.1.0
-    - enum34
     - python-graphviz
-    - wxpython
-    - future
+    - future >=0.15.0
 
 test:
   imports:
