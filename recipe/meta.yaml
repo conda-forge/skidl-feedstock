@@ -22,13 +22,20 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - kinparse >=0.1.0
-    - python-graphviz
     - future >=0.15.0
+    - sexpdata >=1.0.0
+    - kinparse >=0.1.0
+    - kinet2pcb >=1.1.0
+    - python-graphviz
+    - deprecation
 
 test:
+  requires:
+    - pip
   imports:
     - skidl
+  commands:
+    - pip check
 
 about:
   home: https://github.com/xesscorp/skidl
