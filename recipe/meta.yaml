@@ -22,11 +22,18 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - kinparse >=0.1.0
-    - python-graphviz
     - future >=0.15.0
+    - sexpdata 1.0.0
+    - kinparse >=1.2.1
+    - kinet2pcb >=1.1.0
+    - python-graphviz
+    - deprecation
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     - skidl
 
