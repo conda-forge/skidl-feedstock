@@ -1,36 +1,41 @@
-{% set name = "skidl" %}
-{% set version = "1.1.0" %}
+{% set version = "2.0.1" %}
 
 package:
-  name: {{ name|lower }}
+  name: skidl
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c234586a0f04325254145feb81702b1325f3061741a783ccdc69361759d5489f
+  url: https://pypi.org/packages/source/s/skidl/skidl-{{ version }}.tar.gz
+  sha256: d3d8b74cefd85948889f6fb804507f95a72e0812ffd40a467c20f53fd9593c0d
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - netlist_to_skidl = skidl.netlist_to_skidl_main:main
+    - netlist_to_skidl = skidl.scripts.netlist_to_skidl_main:main
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
+    - setuptools
   run:
     - python >={{ python_min }}
-    - kinparse >=0.1.0
-    - python-graphviz
     - future >=0.15.0
+    - sexpdata >=1.0.0
+    - kinparse >=1.2.1
+    - python-graphviz
+    - deprecation
 
 test:
   requires:
     - python {{ python_min }}
+    - pip
   imports:
     - skidl
+  commands:
+    - pip check
 
 about:
   home: https://github.com/xesscorp/skidl
