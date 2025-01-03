@@ -11,7 +11,10 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    # sexpdata is pinned too hard
+    - sed -i.bak '/sexpdata/d' setup.py
+    - {{ PYTHON }} -m pip install . -vv
   entry_points:
     - netlist_to_skidl = skidl.scripts.netlist_to_skidl_main:main
 
@@ -25,6 +28,7 @@ requirements:
     - future >=0.15.0
     - sexpdata >=1.0.0
     - kinparse >=1.2.1
+    - kinet2pcb >= 1.1.0
     - python-graphviz
     - deprecation
 
