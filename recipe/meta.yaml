@@ -1,5 +1,5 @@
 {% set name = "skidl" %}
-{% set version = "1.1.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c234586a0f04325254145feb81702b1325f3061741a783ccdc69361759d5489f
+  sha256: 745e89edfc466735a541268e828673b5cfa8de17692e2bbc1acb5ba0d759da98
 
 build:
   noarch: python
-  number: 1
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+  script: 
+    - touch HISTORY.md
+    - {{ PYTHON }} -m pip install . -vv
   entry_points:
     - netlist_to_skidl = skidl.netlist_to_skidl_main:main
 
@@ -25,6 +27,7 @@ requirements:
     - kinparse >=0.1.0
     - python-graphviz
     - future >=0.15.0
+    - simp-sexp
 
 test:
   requires:
