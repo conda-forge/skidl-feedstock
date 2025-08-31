@@ -27,6 +27,7 @@ requirements:
     - kinparse >=0.1.0
     - python-graphviz
     - future >=0.15.0
+    - simp-sexp
 
 test:
   requires:
