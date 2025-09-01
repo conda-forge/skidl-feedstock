@@ -1,5 +1,5 @@
 {% set name = "skidl" %}
-{% set version = "2.1.0" %}
+{% set version = "2.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 745e89edfc466735a541268e828673b5cfa8de17692e2bbc1acb5ba0d759da98
+  sha256: f127544aa1f8675ca262c838468b3fa02007de1af6a2e7996450e7278c28d285
 
 build:
   noarch: python
   number: 0
-  script: 
+  script:
     - touch HISTORY.md
     - {{ PYTHON }} -m pip install . -vv
   entry_points:
